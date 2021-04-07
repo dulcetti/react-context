@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-export const ContentWrapper = styled.main``;
+export const ContentWrapper = styled.section``;
