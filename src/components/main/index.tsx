@@ -1,16 +1,15 @@
-export default function App() {
+import * as S from './styles';
+
+import Footer from '../footer';
+import Content from '../content';
+import Header from '../header';
+
+export default function Main() {
   return (
-    <div>
-      <header>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <S.AppWrapper>
+      <Header />
+      <Content />
+      <Footer />
+    </S.AppWrapper>
   );
 }
