@@ -10,7 +10,7 @@ type IThmemesValues = {
   color: string;
 };
 
-const themes: IThemes = {
+export const themes: IThemes = {
   dark: {
     bg: '#333',
     color: '#e6e7e7',
@@ -21,4 +21,4 @@ const themes: IThemes = {
   },
 };
 
-export const ThemesContext = createContext<IThemes>(themes);
+export const ThemesContext = createContext<IThmemesValues>(themes.dark);
