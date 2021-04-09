@@ -1,3 +1,5 @@
+import { createContext } from 'react';
+
 type IThemes = {
   dark: IThmemesValues;
   light: IThmemesValues;
@@ -18,3 +20,5 @@ const themes: IThemes = {
     color: '#333',
   },
 };
+
+export const ThemesContext = createContext<IThemes>(themes);
