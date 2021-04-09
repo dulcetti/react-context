@@ -1,17 +1,9 @@
-import { createContext, useContext } from 'react';
-
-type FodasseData = {};
-
-const FodasseDefaultValues = {};
-
-export const FodasseContext = createContext<FodasseData>(FodasseDefaultValues);
-
-type FodasseProviderProps = {
-  children: React.ReactNode;
+type IThemes = {
+  dark: IThmemesValues;
+  light: IThmemesValues;
 };
 
-export const FodasseProvider = ({ children }: FodasseProviderProps) => {
-  return <FodasseContext.Provider value={{}}>{children}</FodasseContext.Provider>;
+type IThmemesValues = {
+  bg: string;
+  color: string;
 };
-
-export const useFodasse = () => useContext(FodasseContext);
