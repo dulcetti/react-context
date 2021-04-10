@@ -8,7 +8,7 @@ import Content from '../content';
 import Header from '../header';
 
 export default function Main() {
-  const [theme] = useState(themes.dark);
+  const [actualTheme] = useState(themes);
 
   const appStyle = {
     backgroundColor: theme.bg,
