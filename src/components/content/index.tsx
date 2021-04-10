@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { themes } from '../../contexts/themes/index';
 import * as S from './styles';
 
 export default function Content() {
-  const [defaultTheme] = useState(themes.default);
-  const changeTheme = () => (defaultTheme === 'dark' ? 'light' : 'dark');
+  const [defaultTheme, changeDefaultTheme] = useState(themes.default);
+  const changeTheme = () => {
+    const newTheme = 'dark' ? 'light' : 'dark';
+    changeDefaultTheme(newTheme);
+  };
 
   return (
     <S.ContentWrapper>
