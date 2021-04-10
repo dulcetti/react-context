@@ -1,11 +1,12 @@
 import { createContext } from 'react';
 
 type IThemes = {
-  dark: IThmemesValues;
-  light: IThmemesValues;
+  dark: IThemesValues;
+  default: 'dark' | 'light';
+  light: IThemesValues;
 };
 
-type IThmemesValues = {
+type IThemesValues = {
   bg: string;
   color: string;
 };
@@ -15,10 +16,11 @@ export const themes: IThemes = {
     bg: '#333',
     color: '#e6e7e7',
   },
+  default: 'dark',
   light: {
     bg: '#e6e7e7',
     color: '#333',
   },
 };
 
-export const ThemesContext = createContext<IThmemesValues>(themes.dark);
+export const ThemesContext = createContext<IThemes>(themes);
