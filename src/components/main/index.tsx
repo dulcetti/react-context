@@ -8,7 +8,7 @@ import Content from '../content';
 import Header from '../header';
 
 export default function Main() {
-  const [theme, setTheme] = useState(themes.dark);
+  const [theme] = useState(themes.dark);
 
   const appStyle = {
     backgroundColor: theme.bg,
@@ -18,7 +18,7 @@ export default function Main() {
   };
 
   return (
-    <ThemesContext.Provider value={theme}>
+    <ThemesContext.Provider value={themes}>
       <S.AppWrapper style={appStyle}>
         <Header />
         <Content />
