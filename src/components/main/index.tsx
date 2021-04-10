@@ -8,11 +8,12 @@ import Content from '../content';
 import Header from '../header';
 
 export default function Main() {
-  const [actualTheme] = useState(themes);
+  const [actualTheme] = useState(themes.default);
+  const [appThemes] = useState(themes);
 
   const appStyle = {
-    backgroundColor: theme.bg,
-    color: theme.color,
+    backgroundColor: appThemes[actualTheme].bg,
+    color: appThemes[actualTheme].color,
     height: '100vh',
     margin: '0',
   };
