@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { themes } from '../../contexts/themes/index';
+import { useContext } from 'react';
+
+import { ThemesContext } from '../../contexts/themes/index';
 import * as S from './styles';
 
 export default function Content() {
-  const [defaultTheme, changeDefaultTheme] = useState(themes.default);
+  const { actual } = useContext(ThemesContext);
   const changeTheme = () => {
-    const newTheme = 'dark' ? 'light' : 'dark';
-    changeDefaultTheme(newTheme);
+    actual = 'dark' ? 'light' : 'dark';
   };
 
   return (
