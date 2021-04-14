@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import * as S from './styles';
 
@@ -8,12 +8,11 @@ import Content from '../content';
 import Header from '../header';
 
 export default function Main() {
-  const [actualTheme] = useState(themes.default);
-  const [appThemes] = useState(themes);
+  const { actual } = useContext(ThemesContext);
 
   const appStyle = {
-    backgroundColor: appThemes[actualTheme].bg,
-    color: appThemes[actualTheme].color,
+    backgroundColor: themes[actual].bg,
+    color: themes[actual].color,
     height: '100vh',
     margin: '0',
   };
