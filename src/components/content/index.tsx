@@ -1,18 +1,15 @@
-import { useState } from 'react';
-import { themes } from '../../contexts/themes/index';
+import { useContext } from 'react';
+
+import { ThemesContext } from '../../contexts/themes/index';
 import * as S from './styles';
 
 export default function Content() {
-  const [defaultTheme, changeDefaultTheme] = useState(themes.default);
-  const changeTheme = () => {
-    const newTheme = 'dark' ? 'light' : 'dark';
-    changeDefaultTheme(newTheme);
-  };
+  const { toggleTheme } = useContext(ThemesContext);
 
   return (
     <S.ContentWrapper>
       Conteúdo boladão
-      <S.ButtonTheme onClick={changeTheme}>Change Theme</S.ButtonTheme>
+      <S.ButtonTheme onClick={toggleTheme}>Change Theme</S.ButtonTheme>
     </S.ContentWrapper>
   );
 }
