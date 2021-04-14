@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import * as S from './styles';
 
@@ -8,17 +8,17 @@ import Content from '../content';
 import Header from '../header';
 
 export default function Main() {
-  const { actual } = useContext(ThemesContext);
+  const [theme, setTheme] = useState(themes.theme);
 
   const appStyle = {
-    backgroundColor: themes[actual].bg,
-    color: themes[actual].color,
+    backgroundColor: themes[theme]?.bg,
+    color: themes[theme]?.color,
     height: '100vh',
     margin: '0',
   };
 
   return (
-    <ThemesContext.Provider value={themes}>
+    <ThemesContext.Provider value={{ theme }}>
       <S.AppWrapper style={appStyle}>
         <Header />
         <Content />
