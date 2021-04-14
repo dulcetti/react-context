@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 type IThemes = {
   dark: IThemesValues;
-  default: 'dark' | 'light';
+  actual: 'dark' | 'light';
   light: IThemesValues;
 };
 
@@ -16,7 +16,7 @@ export const themes: IThemes = {
     bg: '#333',
     color: '#e6e7e7',
   },
-  default: 'dark',
+  actual: 'dark',
   light: {
     bg: '#e6e7e7',
     color: '#333',
